@@ -5,11 +5,19 @@
          version="4.0">
     <!--add code about new servlet-->
     <servlet>
-      <servlet-name>anyName</servlet-name>
+      <servlet-name>anyname</servlet-name>
       <servlet-class>com.XuMengyun.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <servlet-class>com.XuMengyun.week3.demo.LifeCycleServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>anyName</servlet-name>
+        <servlet-name>anyname</servlet-name>
         <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LifeCycleServlet</servlet-name>
+        <url-pattern>/life</url-pattern>
     </servlet-mapping>
 </web-app>
