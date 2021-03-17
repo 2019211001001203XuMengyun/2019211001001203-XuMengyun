@@ -11,14 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<a href="../index.jsp">go to ecjtu</a><!-- method is GET-->
-<form method="post">
-    Name :<input type="text" name="name"><br/>
-    ID:<input type="text" name="id"><br/>
-    password :<input type="text" name="password"><br/>
-    Email :<input type="text" name="email"><br/>
-    Date of Birth :<input type="text" name="Date of Birth"><br/>
-    <input type="submit" value="Send data to server"/>
+<form method="post" action="/register">
+    username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>
+    password :<input type="password" name="password"style="color:deeppink;background:pink"/><br/>
+    email :<input type="text" name="email"style="color:deeppink;background:pink"/><br/>
+    Gender:<input type="radio" name="gender">Male <input type="radio" name="gender"/>Female<br/>
+    Date of birth :<input type="date" name="birthDate"  placeholder="Date of birth(yyyy-mm-dd)" style="color:deeppink;background:pink"/><br/>
+    <input type="submit" value="Register"style="color:deeppink"/>
 </form>
 </body>
 </html>
