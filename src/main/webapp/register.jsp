@@ -12,11 +12,12 @@
 </head>
 <body>
 <form method="post" action="register">
+    id :<input type="text" name="id" style="color:deeppink;background:pink"/><br/>
     username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>
-    password :<input type="password" name="password"style="color:deeppink;background:pink"/><br/>
+    passwork :<input type="password" name="passwork"style="color:deeppink;background:pink"/><br/>
     email :<input type="text" name="email"style="color:deeppink;background:pink"/><br/>
     Gender:<input type="radio" name="gender" value="male">Male <input type="radio" name="gender" value="female">Female<br/>
-    Date of birth :<input type="date" name="birthDate"  placeholder="Date of birth(yyyy-mm-dd)" style="color:deeppink;background:pink"/><br/>
+    Date of birth :<input type="date" name="birthdate"  placeholder="Date of birth(yyyy-mm-dd)" style="color:deeppink;background:pink"/><br/>
     <input type="submit" value="Register"style="color:deeppink"/>
 
 </form>
