@@ -41,8 +41,7 @@ public class RegisterServlet extends HttpServlet {
 //       writer.println("<br>gender:"+gender);
 //       writer.println("<br>birthdate:"+birthdate);
        System.out.println("gotted");
-
-        System.out.println(birthdate);
+       System.out.println(birthdate);
         String[][] ret=new String[100][8];
         int cnt=0;
         try {
