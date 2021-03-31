@@ -21,5 +21,4 @@
     </h1>
 </h1>
 <br/>
-
 <%@include file="footer.jsp"%>

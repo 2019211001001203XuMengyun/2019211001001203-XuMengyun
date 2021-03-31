@@ -18,5 +18,6 @@
     Date of birth :<input type="date" name="birthdate"  placeholder="Date of birth(yyyy-mm-dd)" style="color:deeppink;background:pink"/><br/>
     <input type="submit" value="Register"style="color:deeppink"/>
 </form>
+
 <%@include file="footer.jsp"%>
 

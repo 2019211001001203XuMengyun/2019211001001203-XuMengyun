@@ -12,7 +12,6 @@
     <br/>
     username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>
     passwork :<input type="password" name="passwork"style="color:deeppink;background:pink"/><br/>
-
     <input type="submit" value="Login"style="color:deeppink"/>
 </form>
 <%@include file="footer.jsp"%>

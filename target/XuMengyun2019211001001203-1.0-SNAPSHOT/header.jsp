@@ -1,7 +1,6 @@
 <html>
  <head>
    <title>My Online Shop</title>
-   
  </head>
  <body style="margin:0px;padding:0px;font-family:helvetica;">
  <table width="100%" cellpadding="0" cellspacing="0">
