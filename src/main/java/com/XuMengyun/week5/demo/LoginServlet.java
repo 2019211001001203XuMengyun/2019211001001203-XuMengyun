@@ -48,6 +48,6 @@ public class LoginServlet extends HttpServlet {
             System.out.println(e);
         }
         if (!find)
-            writer.println("Wrong username or password");
+            writer.println("username or password Error!!!");
     }
 }
