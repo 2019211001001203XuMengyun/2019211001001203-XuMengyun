@@ -19,7 +19,7 @@
         <param-name>password</param-name>
         <param-value>admin123456789</param-value>
     </context-param>
-<!-- <servlet>-->
+    <!-- <servlet>-->
 <!--    <servlet-name>ConfigDemoServlet</servlet-name>-->
 <!--    <servlet-class>com.XuMengyun.week4.demo.ConfigDemoServlet</servlet-class>-->
 <!--    <init-param>-->
