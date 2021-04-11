@@ -8,6 +8,11 @@
 <%@include file="header.jsp"%>
 <form method="post" action="login">
     <h2>Login</h2>
+    <%
+        if(!(request.getAttribute("message")==null)) {
+            out.print("<h3>"+request.getAttribute("message")+"<h3>");
+        }
+    %>
 <br/>
     <br/>
     username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>

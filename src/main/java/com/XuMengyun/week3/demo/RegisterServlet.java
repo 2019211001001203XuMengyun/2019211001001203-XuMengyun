@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 //automatic -new --> servlet
+
 @WebServlet(name = "RegisterServlet",value = "/register")
+
 public class RegisterServlet extends HttpServlet {
     public Connection dbConn;
     public void init()  {
@@ -19,6 +21,7 @@ public class RegisterServlet extends HttpServlet {
         } catch (Exception e) {
             System.out.println(e);
         }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,14 +42,15 @@ public class RegisterServlet extends HttpServlet {
 //        writer.println("<br>email:"+email);
 //       writer.println("<br>gender:"+gender);
 //       writer.println("<br>birthdate:"+birthdate);
-       System.out.println("gotted");
-       System.out.println(birthdate);
-        String[][] ret=new String[100][8];
+        System.out.println("gotted");
+        System.out.println(birthdate);
+        String[][] ret=new String[100][6];
         int cnt=0;
         try {
+
             System.out.println("try cn");
             Statement createDbStatement = dbConn.createStatement();
-            String dbRequire1="insert into usertable values('"+id+"','"+username+"','"+passwork+"','"+email+"','"+gender+"','"+birthdate+"')";
+            String dbRequire1="insert into usertable values('"+username+"','"+passwork+"','"+email+"','"+gender+"','"+birthdate+"')";
             System.out.println(dbRequire1);
             createDbStatement.executeUpdate(dbRequire1);
             String dbRequire="select * from usertable";
@@ -56,22 +60,25 @@ public class RegisterServlet extends HttpServlet {
                 ret[cnt][1]=resultDb.getObject(2).toString().trim();
                 ret[cnt][2]=resultDb.getObject(3).toString().trim();
                 ret[cnt][3]=resultDb.getObject(4).toString().trim();
-                ret[cnt][4]=resultDb.getObject(5).toString().trim();
-                ret[cnt++][5]=resultDb.getObject(6).toString().trim();
+                ret[cnt++][4]=resultDb.getObject(5).toString().trim();
             }
+request.setAttribute("username",resultDb);
+
+            request.getRequestDispatcher("userList.jsp").forward(request,response);
+       System.out.println("i am in RegisterServlet-->doPost()--> after forward()");
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("shown"+e);
         }
-        writer.println("<table border=\"1\">");
-        writer.println("<tr><td>id</td><td>username</td><td>passwork</td><td>email</td><td>gender</td><td>birthdate</td></tr>");
-        for(int i=0;i<cnt;i++) {
-//            writer.println("<tr><td>"+(i+1)+"</td>");
-            writer.println("<tr>");
-            for(int j=0;j<6;j++) {
-                writer.println("<td>"+ret[i][j]+"</td>");
-            }
-            writer.println("</tr>");
-        }
-        writer.println("</table>");
+        response.sendRedirect("login.jsp");
+     //   writer.println("<table border=\"1\">");
+      //  writer.println("<tr><td>id</td><td>username</td><td>passwork</td><td>email</td><td>gender</td><td>birthdate</td></tr>");
+    //    for(int i=0;i<cnt;i++) {
+    //        writer.println("<tr><td>"+(i+1)+"</td>");
+   //         for(int j=0;j<5;j++) {
+  //              writer.println("<td>"+ret[i][j]+"</td>");
+  //          }
+   //         writer.println("</tr>");
+   //     }
+   //     writer.println("</table>");
     }
 }

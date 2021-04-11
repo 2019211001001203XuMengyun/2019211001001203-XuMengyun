@@ -8,9 +8,9 @@
 <%@include file="header.jsp"%>
 <form method="post" action="register">
     <h2>This is my register JSP page.</h2>
-<br/>
     <br/>
-    id :<input type="text" name="id" style="color:deeppink;background:pink"/><br/>
+    <br/>
+
     username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>
     passwork :<input type="password" name="passwork"style="color:deeppink;background:pink"/><br/>
     email :<input type="text" name="email"style="color:deeppink;background:pink"/><br/>
@@ -20,4 +20,6 @@
 </form>
 
 <%@include file="footer.jsp"%>
+
+
 
