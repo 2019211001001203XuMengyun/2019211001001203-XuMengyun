@@ -1,5 +1,6 @@
 package com.XuMengyun.week6.demo;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
@@ -8,27 +9,28 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 @WebListener()
 public class JDBCServletContextListener implements ServletContextListener{
-    public Connection dbConn;
-    public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("i am in contextInitialized()");
+   @Override
+    public void contextInitialized(ServletContextEvent sce) {
+       ServletContext context= sce.getServletContext();
+       String driver= context.getInitParameter("driver");
+       String url= context.getInitParameter("url");
+       String username= context.getInitParameter("username");
+       String password= context.getInitParameter("password");
+
         try {
-            dbConn.close();
-        } catch (SQLException e) {
+           Class.forName(driver);
+           Connection con=DriverManager.getConnection(url,username,password);
+            System.out.println("i am in JDBCServletContextListener -->contextInitialized()==>"+con);
+       context.setAttribute("con",con);
+        } catch (ClassNotFoundException |SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("i am in contextDestroyed()");
-        try {
-            Class.forName(sce.getServletContext().getInitParameter("driver"));
-            dbConn= DriverManager.getConnection(sce.getServletContext().getInitParameter("url"),sce.getServletContext().getInitParameter("username"),sce.getServletContext().getInitParameter("password"));
-            System.out.println(dbConn);
-        } catch (Exception e) {
-            System.out.println("shown"+e);
-        }
-        sce.getServletContext().setAttribute("con",dbConn);
-    }
+   @Override
+public void contextDestroyed(ServletContextEvent sce) {
+   System.out.println("i am in JDBCServletContextListener -->contextDestroyed");
+   sce.getServletContext().removeAttribute("con");
 
-
+   }
 }

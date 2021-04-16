@@ -10,7 +10,7 @@
     <h2>Login</h2>
     <%
         if(!(request.getAttribute("message")==null)) {
-            out.print("<h3>"+request.getAttribute("message")+"<h3>");
+            out.println("<h3>"+request.getAttribute("message")+"<h3>");
         }
     %>
 <br/>
