@@ -13,10 +13,26 @@
             out.print("<h3>"+request.getAttribute("message")+"<h3>");
         }
     %>
+    <%
+        Cookie[] allCookies=request.getCookies();
+        String username = "",password="",rememerMeVal="";
+        if(allCookies != null) {
+            for(Cookie c:allCookies) {
+                if(c.getName().equals("cUsername")) {
+                    username=c.getValue();
+                }
+                if(c.getName().equals("cPassword")) {
+                    password=c.getValue();
+                }if(c.getName().equals("rememberMeVal")) {
+                    rememerMeVal=c.getValue();
+                }
+            }
+        }
+    %>
 <br/>
     <br/>
-    username :<input type="text" name="username" style="color:deeppink;background:pink"/><br/>
-    password :<input type="password" name="password"style="color:deeppink;background:pink"/><br/>
+    username :<input type="text" name="username" style="color:deeppink;background:pink"value="<%=username%>"><br/>
+    password :<input type="password" name="password"style="color:deeppink;background:pink"value="<%=password%>"><br/>
     <input type="submit" value="Login"style="color:deeppink"/>
 </form>
 <%@include file="footer.jsp"%>

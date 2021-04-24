@@ -3,6 +3,7 @@ package com.XuMengyun.dao;
 import com.XuMengyun.model.User;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 public class UserDao implements  IUserDao {
@@ -35,7 +36,8 @@ public class UserDao implements  IUserDao {
     public int updateUser(Connection con, User user) throws SQLException {
         try{
             Statement createDbStatement = con.createStatement();
-            String dbRequire="update usertable set username='"+user.getUsername()+"',password='"+user.getPassword()+"',Email='"+user.getEmail()+"',gender='"+user.getGender()+"',birthdate='"+user.getBirthdate()+"' where id="+user.getID();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String dbRequire="update usertable set username='"+user.getUsername()+"',password='"+user.getPassword()+"',Email='"+user.getEmail()+"',gender='"+user.getGender()+"',birthdate='"+simpleDateFormat.format(user.getBirthdate())+"' where id="+user.getID();
             createDbStatement.executeUpdate(dbRequire);
             System.out.println("update "+user.getID()+"success");
             return 1;
