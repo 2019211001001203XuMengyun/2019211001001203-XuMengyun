@@ -1,7 +1,5 @@
 package com.XuMengyun.model;
-
 import java.io.StringReader;
-
 public class Product {
     private Integer productId;
     private Integer categoryId;
@@ -60,6 +58,8 @@ public class Product {
         this.price=price;
     }
     public String toString() {
-        return "Product[productId="+productId+",categoryId="+categoryId+",productName="+productName+",prodcutDescription="+productDescription+",picture="+picture+",price="+price+"]";
+        return "Product[productId=" + productId + ",categoryId=" + categoryId + ",productName=" + productName + ",prodcutDescription=" + productDescription + ",picture=" + picture + ",price=" + price + "]";
     }
+
+
 }

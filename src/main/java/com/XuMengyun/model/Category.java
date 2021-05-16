@@ -39,6 +39,7 @@ public class Category {
         return description;
     }
 
+    
     public Boolean getActive() {
         return active;
     }

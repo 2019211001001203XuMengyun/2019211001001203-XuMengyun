@@ -16,7 +16,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Logger;
-
 @WebServlet("/admin/addProduct")
 @MultipartConfig(maxFileSize = 16177215)
 public class AddProductServlet extends HttpServlet {
@@ -47,7 +46,6 @@ public class AddProductServlet extends HttpServlet {
             System.out.println(e);
         }
     }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Category category=new Category();
         List<Category> categoryList= null;

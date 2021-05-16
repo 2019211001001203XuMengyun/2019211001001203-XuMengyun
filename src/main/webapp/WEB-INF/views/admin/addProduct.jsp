@@ -30,7 +30,6 @@
 				               	<select name="categoryId">
 										<option >-- Category --</option>
 											<!-- loop_start -->
-
 									<option value="1">FASHION</option>
 									<option value="2">HOUSEHOLD</option>
 									<option value="3">INTERIORS</option>
@@ -39,8 +38,7 @@
 									<option value="6">SHOES</option>
 									<option value="7">BOOKS</option>
 										<!-- loop_end -->
-										
-										</select>
+								</select>
 				            </div>
 				            <div class="form-group col-md-6">
 				                <input type="file" name="picture" class="form-control" required="required" placeholder="picture">

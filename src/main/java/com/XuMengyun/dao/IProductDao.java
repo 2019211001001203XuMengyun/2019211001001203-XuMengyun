@@ -6,9 +6,6 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-
-
-
 public interface IProductDao {
 	/**
 	 * Insert a product

@@ -1,13 +1,10 @@
 package com.XuMengyun.filter;
-
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
 @WebFilter("/admin/*")
 public class AdminAuthenticationFilter implements Filter {
     public void destroy() {
@@ -24,6 +21,7 @@ public class AdminAuthenticationFilter implements Filter {
         if(isLoggedIn&&(isLoginRequset||isLoginPage)) {
             RequestDispatcher dispatcher=req.getRequestDispatcher("/admin/home");
             dispatcher.forward(req,resp);
+
         }
         else if(isLoggedIn||isLoginRequset) {
             chain.doFilter(req,resp);
@@ -32,7 +30,6 @@ public class AdminAuthenticationFilter implements Filter {
             httpResponse.sendRedirect(httpRequest.getContextPath()+"/login");
         }
     }
-
     public void init(FilterConfig config) throws ServletException {
 
     }
