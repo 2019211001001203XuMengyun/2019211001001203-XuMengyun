@@ -2,7 +2,6 @@
   <artifact type="war" name="2019211001001203XuMengyun:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
-
       <options>
         <module>2019211001001203XuMengyun</module>
         <packaging>war</packaging>
