@@ -21,6 +21,7 @@ public class LoginFilter implements Filter {
 
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
+        System.out.println(((HttpServletRequest) req).getSession(false));
         if (request.getSession() != null && request.getSession().isNew()){
             request.getRequestDispatcher("/lab2/welcome.jsp").forward(request,response);
         }else {
